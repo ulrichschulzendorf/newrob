@@ -18,6 +18,7 @@ const App = (props) => {
   }, []);
 
   const sendGetRequest = async () => {
+    console.log("This works");
     try {
       axios
         .get("http://localhost:3001/robots")
@@ -41,7 +42,6 @@ const App = (props) => {
   //   createRobot([...robots, newRobot]);
   //   console.log(robots);
   // };
-
   const addRobot = async (robotName) => {
     try {
       axios
@@ -71,11 +71,8 @@ const App = (props) => {
               const robot = robots.find(
                 (robot) => robot.name == props.match.params.name
               );
-              console.log(props);
-              console.log(robots);
-              console.log(props.match.params);
-              console.log(props.match.params.name);
-              if (robot) return <Robot robot={robot} />;
+
+              if (robot) return <Robot robot={robot} update={sendGetRequest} />;
               else return <NotFound />;
             }}
           />

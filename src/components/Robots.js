@@ -32,7 +32,7 @@ const Robots = ({ robots, addRobot }) => {
         {robots.map((robot) => (
           <li key={robot.id}>
             <h2>
-              <Link to={`/robot/${robot.slug}`}>{robot.name}</Link>
+              <Link to={`/robot/${robot.name}`}>{robot.name}</Link>
             </h2>
           </li>
         ))}
